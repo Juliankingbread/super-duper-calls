@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#03A9F4</color>
-    <color name="colorPrimaryDark">#1976D2</color>
-    <color name="colorAccent">#0288D1</color>
-    <color name="colorPrimaryLight">#B3E5FC</color>
+
+    <color name="colorPrimary">#39A7A2</color>
+    <color name="colorPrimaryDark">#009688</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="colorPrimaryLight">#ffffff</color>
+
+    <!-- Basic colors. -->
+    <color name="black">#000000</color>
+    <color name="blue_facebook">#3C5C95</color>
+    <color name="gray_lighter">#EAEAEA</color>
+    <color name="gray_light">#9ca2a7</color>
+    <color name="gray">#444444</color>
+    <color name="gray_dark">#3D3D3D</color>
+    <color name="teal">#40BAB5</color>
+    <color name="teal_dark">#39A7A2</color>
+    <color name="teal_darker">#009688</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#D0021B</color>
+
+    <!-- Styling itself. -->
+    <color name="header_filter">#9640BAB5</color>
+
+    <color name="background_container">#FFFAFAFA</color>
+
+    <color name="background_primary">@color/teal</color>
+    <color name="background_primary_dark">@color/teal_dark</color>
+
+    <color name="background_inverse">@color/gray</color>
+    <color name="background_inverse_dark">@color/gray_dark</color>
+
+    <color name="color_primary">@color/gray</color>
+    <color name="color_link">@color/teal</color>
+    <color name="color_link_inverse">@color/gray</color>
+
 </resources>

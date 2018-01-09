@@ -16,38 +16,36 @@
             android:layout_marginRight="5dip" >
         </LinearLayout>
 
-
-
         <TextView
             android:id="@+id/cachedname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
+            android:textColor="#3D3D3D"
             android:textSize="20dip"
-            android:text="Namenamename"
+            android:textStyle="bold"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/thumbnail"
             android:layout_toEndOf="@+id/thumbnail" />
 
         <TextView
-            android:id="@+id/timestamp"
+            android:id="@+id/number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NUMMER"
-            android:textColor="#FFD700"
+            android:textColor="#3D3D3D"
             android:typeface="sans"
             android:textSize="22dip"
-            android:textStyle="bold|italic"
+            android:textStyle="bold"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/cachedname"
             android:layout_toEndOf="@+id/cachedname" />
 
         <TextView
-            android:id="@+id/number"
+            android:id="@+id/timestamp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/timestamp"
-            android:textColor="#FFFFFF"
+            android:layout_below="@+id/number"
+            android:textColor="#3D3D3D"
             android:textSize="15dip"
             android:layout_marginTop="1dip"
             android:layout_toRightOf="@+id/thumbnail"
@@ -59,28 +57,29 @@
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:gravity="center"
             android:background="@drawable/roundbutton"
-            android:backgroundTint="#000000"
-            android:text="X"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            style="?android:attr/borderlessButtonStyle"
+
+            android:text="×"
+            android:textColor="#D0021B"
+            android:textSize="25dp"
             android:textStyle="bold"/>
 
+        <Button
+            android:id="@+id/moveup_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="55dp"
+            android:background="@drawable/roundbutton"
+            style="?android:attr/borderlessButtonStyle"
 
-        <!-- <Button
-        android:id="@+id/deleteBtn"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:background="@drawable/roundbutton"
-        android:text="X"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginRight="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" /> -->
+            android:text="▲"
+            android:textColor="#3D3D3D"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>

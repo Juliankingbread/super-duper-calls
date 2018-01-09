@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -46,30 +47,55 @@ public class ListAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View vi = convertView;
-        if (convertView == null)
+
+//        if (convertView == null) <-- recycles but resets positions. Increases performance though ...
             vi = inflater.inflate(R.layout.missedcall_item, null);
+
 
         TextView timestamp = (TextView) vi.findViewById(R.id.timestamp);
         TextView number = (TextView) vi.findViewById(R.id.number);
         TextView name = (TextView) vi.findViewById(R.id.cachedname);
 
-        HashMap<String, String> song = new HashMap<String, String>();
-        song = data.get(position);
+        HashMap<String, String> call = new HashMap<String, String>();
+        call = data.get(position);
 
-        // Setting the values in ListView
+        final String phNumber = call.get(MainActivity.KEY_NUMBER);
 
-            timestamp.setText(song.get(MainActivity.KEY_NUMBER));
-            number.setText(song.get(MainActivity.KEY_TIME));
-            name.setText(song.get(MainActivity.KEY_NAME));
+        timestamp.setText(call.get(MainActivity.KEY_TIME));
 
+        if (call.get(MainActivity.KEY_NAME) != null) {
+            name.setText(call.get(MainActivity.KEY_NAME));
+            number.setText(call.get(null));
+        }
+
+        if (call.get(MainActivity.KEY_NAME) == null) {
+            number.setText(call.get(MainActivity.KEY_NUMBER));
+            name.setText(null);
+        }
 
         Button deleteBtn = (Button) vi.findViewById(R.id.delete_btn);
+        Button moveUpBtn = (Button) vi.findViewById(R.id.moveup_btn);
+
+        if (position == 0) {
+            moveUpBtn.setVisibility(View.GONE);
+        }
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // do smth
-                data.remove(position); // or some other task
+                data.remove(position);
+                notifyDataSetChanged();
+
+                MainActivity mActivity = new MainActivity();
+                mActivity.dismissCall(activity.getApplicationContext(), phNumber);
+            }
+        });
+
+        moveUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Collections.swap(data, position, position-1);
                 notifyDataSetChanged();
             }
         });
@@ -77,4 +103,9 @@ public class ListAdapter extends BaseAdapter {
         return vi;
 
     }
+
+
+
+
+
 }
